@@ -376,6 +376,17 @@ open class AZTabBarController: UIViewController {
         self.initialize(withTabIcons: tabIcons,highlightedIcons: highlightedIcons)
     }
     
+    public func show() {
+        buttonsContainerHeightConstraint.constant = buttonsContainerHeightConstraintInitialConstant
+        view.layoutIfNeeded()
+
+    }
+    
+    public func hide() {
+        buttonsContainerHeightConstraint.constant = 0
+        view.layoutIfNeeded()
+    }
+    
     
     /// Public initializer that creates a controller using tabIcons and (optional) highlightedIcon names.
     ///
